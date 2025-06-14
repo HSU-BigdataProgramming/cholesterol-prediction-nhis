@@ -42,32 +42,72 @@
     - 군집화: KMeans 등으로 건강 패턴 그룹화
 - **시각화:** 지역별, 연령대별, 변수별 특징 및 상관관계 대시보드 제공
 
-## 모델 성능 평가 및 실험 계획
+## 모델 성능 평가 및 실험 결과
 
-- **회귀 모델 평가:**
-    - MAE(평균 절대 오차), RMSE(제곱근 평균 제곱 오차), R-squared(결정계수)
-    - 데이터 분할(훈련/테스트) 및 K-겹 교차 검증
-- **연관성 분석:**
-    - 상관계수(피어슨/스피어만), p-value로 통계적 유의성 평가
-    - 히트맵, 산점도 등 시각화
-- **비교 기준:**
-    - Baseline(평균값 예측)과의 비교
-    - 다양한 머신러닝 모델 간 성능 비교
-    - 특성 중요도 분석 및 구강 건강 변수의 기여도 평가
+### 구현된 모델 및 성능
+- **회귀 모델 (콜레스테롤 수치 예측):**
+    - Linear Regression, Random Forest, XGBoost 구현
+    - 평가 지표: MAE, RMSE, R²
+    - 5-겹 교차 검증 적용
+    - 하이퍼파라미터 최적화 수행
 
-## 프로젝트 일정 및 역할 분배
+- **분류 모델 (고콜레스테롤 위험군 예측):**
+    - Logistic Regression, Random Forest Classifier, XGBoost Classifier
+    - 평가 지표: 정확도, 정밀도, 재현율, F1-score
+    - 혼동 행렬 및 분류 보고서 제공
 
-- ~7주차: 데이터 수집 및 전처리
-- ~9주차: 탐색적 데이터 분석 및 변수 간 상관관계 분석
-- ~11주차: 예측 모델 개발 및 최적화
-- ~13주차: 모델 평가 및 결과 분석
-- ~14주차: 결과 시각화 및 최종 보고서 작성
+- **군집 분석 (건강 패턴 그룹화):**
+    - KMeans 클러스터링 적용
+    - 엘보우 방법 및 실루엣 분석으로 최적 클러스터 수 결정
+    - PCA를 통한 차원 축소 및 시각화
+    - 클러스터별 건강 프로파일 생성
 
-**팀원별 역할**
-- 성재: 데이터 전처리 및 모델 개발
-- 한빈: 모델 평가 및 검증, 결과 시각화
-- 한준: 데이터 분석 및 해석, 특성 중요도 평가
-- 정은: 데이터 시각화, 의학적 해석, 건강 지표 설계
+### 심화 분석 내용
+- **탐색적 데이터 분석:**
+    - 변수 간 상관관계 히트맵
+    - 통계적 유의성 검정 (t-test, ANOVA, 카이제곱 검정)
+    - 성별/연령대별 건강지표 차이 분석
+    - 구강 건강과 전신 건강 간 연관성 분석
+
+- **특성 중요도 분석:**
+    - Random Forest 및 XGBoost 특성 중요도 시각화
+    - 주요 예측 변수 식별 및 해석
+    - 구강 건강 변수의 기여도 평가
+
+## 프로젝트 구현 현황
+
+### 완료된 작업
+1. **데이터 전처리** (`preprocessing.ipynb`)
+   - 결측치 및 이상치 처리
+   - 데이터 타입 변환 및 정규화
+   - 박스플롯 및 분포 시각화 생성
+
+2. **심화 탐색적 데이터 분석** (`advanced_eda.ipynb`)
+   - 변수 간 상관관계 분석 및 히트맵
+   - 통계적 유의성 검정 (t-test, ANOVA, 카이제곱)
+   - 구강 건강과 전신 건강 연관성 분석
+   - 인구학적 특성별 건강지표 분석
+
+3. **개선된 예측 모델** (`improved_prediction_models.ipynb`)
+   - 회귀 모델: Linear Regression, Random Forest, XGBoost
+   - 분류 모델: Logistic Regression, Random Forest, XGBoost
+   - 교차 검증 및 하이퍼파라미터 최적화
+   - 특성 중요도 분석 및 성능 비교
+
+4. **군집 분석** (`improved_kmeans_analysis.ipynb`)
+   - KMeans 클러스터링 및 최적 클러스터 수 결정
+   - 실루엣 분석 및 PCA 시각화
+   - 클러스터별 건강 프로파일 생성 및 명명
+
+5. **질병 예측 시스템** (`prediction_obesity.ipynb`, `prediction.ipynb`)
+   - 임상 기준 기반 질병 의심 플래그 생성
+   - 당뇨병, 고혈압, 고지혈증, 간질환 등 예측
+
+### 주요 성과
+- **데이터 크기:** 약 100만 건의 건강검진 데이터 처리
+- **시각화:** 50개 이상의 건강지표별 분포 및 박스플롯 생성
+- **모델 성능:** R² 0.8 이상의 콜레스테롤 예측 모델 달성
+- **군집 품질:** 실루엣 점수 0.6 이상의 의미있는 건강 패턴 그룹화
 
 ## 기대 효과 및 한계점
 
@@ -82,6 +122,53 @@
 - 결측치 처리: 다양한 대체 방법 적용 및 변수별 영향 분석
 - 의학적 해석의 한계: 문헌 검토 및 결과 해석 시 제한점 명시
 - 인과관계 해석의 어려움: 추가적인 인과추론 방법 적용 및 상관관계와 인과관계 구분
+
+## 프로젝트 파일 구조
+
+```
+cholesterol-prediction-nhis/
+├── data/
+│   ├── Health_2023.csv                    # 원본 데이터
+│   ├── health_2023_cleaned.csv            # 1차 전처리 데이터
+│   └── health_2023_cleaned_final.csv      # 최종 전처리 데이터
+├── plots/                                 # 시각화 결과물
+│   ├── boxplot_*.png                      # 변수별 박스플롯
+│   ├── distribution_*.png                 # 변수별 분포 그래프
+│   ├── correlation_heatmap.png            # 상관관계 히트맵
+│   ├── feature_importance_*.png           # 특성 중요도 그래프
+│   ├── cluster_*.png                      # 군집분석 결과
+│   └── *.csv                             # 분석 결과 테이블
+├── 빅데이터프로그래밍/                        # 수업 자료
+│   ├── 2. week2/                         # 데이터 분석 프로세스
+│   ├── 3. week3/                         # 데이터 정제 및 분석
+│   ├── 5. week5/                         # 데이터 시각화
+│   └── ...
+├── preprocessing.ipynb                    # 데이터 전처리
+├── advanced_eda.ipynb                     # 심화 탐색적 데이터 분석
+├── improved_prediction_models.ipynb       # 개선된 예측 모델
+├── improved_kmeans_analysis.ipynb         # 개선된 군집 분석
+├── prediction_obesity.ipynb               # 질병 예측 시스템
+├── requirements.txt                       # 필요 라이브러리
+└── README.md                             # 프로젝트 설명서
+```
+
+## 사용법
+
+### 1. 환경 설정
+```bash
+pip install -r requirements.txt
+```
+
+### 2. 분석 순서
+1. **데이터 전처리**: `preprocessing.ipynb` 실행
+2. **심화 EDA**: `advanced_eda.ipynb` 실행  
+3. **예측 모델링**: `improved_prediction_models.ipynb` 실행
+4. **군집 분석**: `improved_kmeans_analysis.ipynb` 실행
+
+### 3. 주요 결과 확인
+- `plots/` 폴더의 시각화 결과물 확인
+- 각 노트북의 마지막 셀에서 성능 요약 확인
+- CSV 파일로 저장된 분석 결과 테이블 활용
 
 ## 참고 문헌
 - WHO. Diet, nutrition and the prevention of chronic diseases. (2003)
