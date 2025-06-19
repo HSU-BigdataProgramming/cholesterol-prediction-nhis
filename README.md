@@ -1,5 +1,17 @@
 # 건강검진 데이터를 활용한 콜레스테롤 수치 예측 및 건강지표 연관성 분석
 
+## 설치 라이브러리
+<p>python 3.10 버전</p>
+
+<p>pip install ipykernel==6.29.5
+<p>pip install pandas==2.3.0
+<p>pip install matplotlib==3.10.3
+<p>pip install seaborn==0.13.2
+<p>pip install scikit-learn==1.7.0
+<p>pip install numpy==2.1.3
+<p>pip install xgboost==3.0.2
+<p>pip install tensorflow==2.19.0
+
 ## 프로젝트 개요
 
 ### 프로젝트 제목
