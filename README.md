@@ -11,17 +11,7 @@ Python 3.10 버전 권장
 pip install -r requirements.txt
 ```
 
-### 개별 라이브러리 버전
-```bash
-pip install ipykernel==6.29.5
-pip install pandas==2.3.0
-pip install matplotlib==3.10.3
-pip install seaborn==0.13.2
-pip install scikit-learn==1.7.0
-pip install numpy==2.1.3
-pip install xgboost==3.0.2
-pip install tensorflow==2.19.0
-```
+> 모든 라이브러리의 구체적인 버전은 `requirements.txt` 파일에 명시되어 있습니다.
 
 ## 파일 구조 및 설명
 
