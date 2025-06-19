@@ -1,6 +1,8 @@
 # 건강검진 데이터를 활용한 콜레스테롤 수치 예측 및 건강지표 연관성 분석
 
 ## 설치 라이브러리
+<p>python 3.10 버전</p>
+
 <p>pip install ipykernel
 <p>pip install pandas
 <p>pip install matplotlib
