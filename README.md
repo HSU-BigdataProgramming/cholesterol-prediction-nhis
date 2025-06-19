@@ -3,14 +3,14 @@
 ## 설치 라이브러리
 <p>python 3.10 버전</p>
 
-<p>pip install ipykernel
-<p>pip install pandas
-<p>pip install matplotlib
-<p>pip install seaborn
-<p>pip install scikit-learn
-<p>pip install numpy
-<p>pip install xgboost
-<p>pip install tensorflow
+<p>pip install ipykernel==6.29.5
+<p>pip install pandas==2.3.0
+<p>pip install matplotlib==3.10.3
+<p>pip install seaborn==0.13.2
+<p>pip install scikit-learn==1.7.0
+<p>pip install numpy==2.1.3
+<p>pip install xgboost==3.0.2
+<p>pip install tensorflow==2.19.0
 
 ## 프로젝트 개요
 
