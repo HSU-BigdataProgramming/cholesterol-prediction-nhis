@@ -61,14 +61,14 @@ pip install tensorflow==2.19.0
 - HDL콜레스테롤: R² = 0.215
 - LDL콜레스테롤: R² = 0.101
 
-#### 3. `prediction_colesterol_binary.ipynb` - 콜레스테롤 위험도 분류
+#### 3. `classification_colesterol_binary.ipynb` - 콜레스테롤 위험도 분류
 **주요 내용:**
 - 콜레스테롤 수치를 정상/위험 이진 분류
 - 임상적 기준에 따른 위험도 분류
 
-#### 4. `prediction_obesity.ipynb` - 비만 예측 모델
+#### 4. `classification_obesity.ipynb` - 비만 분류 모델
 **주요 내용:**
-- RandomForest Classifier를 사용한 비만 예측
+- RandomForest Classifier를 사용한 비만 분류
 - 정확도: 93.28%
 - 교차검증 정확도: 93.29% (cv=10)
 
