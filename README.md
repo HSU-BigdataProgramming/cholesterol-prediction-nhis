@@ -79,7 +79,7 @@ pip install -r requirements.txt
   - 심혈관질환 위험: 308,824명
   - 비만 의심: 211,267명
 
-#### 7. `KMeans.ipynb` - 클러스터링 분석
+#### 6. `KMeans.ipynb` - 클러스터링 분석
 **주요 내용:**
 - K-means 클러스터링을 통한 건강상태 군집화
 - 4개 클러스터 생성:
